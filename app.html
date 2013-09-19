@@ -1,0 +1,102 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Multi Filehandler Example</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>Multi Filehandler Example</h1>
+        <p class="lead">Drop images into the dropzone</p>
+    </div>
+
+    {{>dropZone}}
+
+    <h3>{{loginButtons}}</h3>
+
+    {{>imageList}}
+
+     {{>imageModal}}
+</div>
+
+
+</body>
+
+<!-- a bootstrap jumbotron that is used as a file drop -->
+<template name="dropZone">
+    <div class="jumbotron drop-zone">
+        <div class="container">
+            <h1>Drop images here!</h1>
+
+        </div>
+    </div>
+
+</template>
+
+<!-- List for images -->
+<template name="imageList">
+    <ul class="media-list">
+        {{#each images}}
+            {{>imageItem}}
+        {{/each}}
+    </ul>
+</template>
+
+<!-- A single  media list item  -->
+<template name="imageItem">
+    <li class="media">
+        <a class="pull-left open-modal" href="#">
+            <img class="media-object" src="{{cfsFileUrl '64x64'}}" alt="{{_id}}">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">{{filename}}</h4>
+            <p>Uploaded at {{formattedUploadedDate}} </p>
+            <p>Size {{formatedSize}}</p>
+            <p>Id {{_id}}</p>
+
+        </div>
+    </li>
+</template>
+
+
+
+<!-- A simple modal that contains just a bigger view of the selected image -->
+<template name="imageModal">
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+
+                    <img src="{{cfsFileUrl 'bigSize' file=image}}" alt="..." class="img-rounded">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
