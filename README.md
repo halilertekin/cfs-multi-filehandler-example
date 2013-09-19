@@ -1,5 +1,5 @@
-1. ```mrt update´´´
+1.  mrt update
 
-2. ```meteor´´´
+2.  meteor
 
-3. Drag images files in the drop zone
+3.  Drag images files in the drop zone
