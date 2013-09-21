@@ -1,5 +1,4 @@
-1.  mrt update
-
-2.  meteor
-
-3.  Drag images files in the drop zone
+1. ensure imagemagick is installed on your machine
+2. mrt update
+3. meteor
+4. Drag images files in the drop zone
