@@ -13,6 +13,7 @@ accounts-ui
 collectionFS
 accounts-password
 
-cfsfilehandlerserver
 bootstrap-3
 imagemagick
+
+cfs-public-folder
